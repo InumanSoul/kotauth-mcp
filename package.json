@@ -1,0 +1,59 @@
+{
+  "name": "@kotauth/mcp",
+  "version": "0.1.0",
+  "description": "MCP server for managing KotAuth identity platform — users, roles, groups, sessions, and audit logs via AI assistants",
+  "type": "module",
+  "bin": {
+    "kotauth-mcp": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "kotauth",
+    "identity",
+    "authentication",
+    "authorization",
+    "iam",
+    "oauth2",
+    "oidc",
+    "ai",
+    "llm",
+    "claude",
+    "self-hosted"
+  ],
+  "author": "Kotauth Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kotauth/kotauth-mcp.git"
+  },
+  "homepage": "https://kotauth.dev",
+  "bugs": {
+    "url": "https://github.com/kotauth/kotauth-mcp/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "typescript": "^5.8.3"
+  }
+}
