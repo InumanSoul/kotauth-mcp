@@ -1,6 +1,6 @@
 {
   "name": "@kotauth/mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "MCP server for managing KotAuth identity platform — users, roles, groups, sessions, and audit logs via AI assistants",
   "type": "module",
   "bin": {
@@ -39,11 +39,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kotauth/kotauth-mcp.git"
+    "url": "https://github.com/inumansoul/kotauth-mcp.git"
   },
-  "homepage": "https://kotauth.dev",
+  "homepage": "https://kotauth.com",
   "bugs": {
-    "url": "https://github.com/kotauth/kotauth-mcp/issues"
+    "url": "https://github.com/inumansoul/kotauth-mcp/issues"
   },
   "engines": {
     "node": ">=18.0.0"
