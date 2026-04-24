@@ -1,7 +1,7 @@
 {
   "name": "@kotauth/mcp",
-  "version": "0.1.1",
-  "description": "MCP server for managing KotAuth identity platform — users, roles, groups, sessions, and audit logs via AI assistants",
+  "version": "0.2.0",
+  "description": "MCP server for managing KotAuth identity platform — users, roles, groups, applications, sessions, audit logs, user attributes, and claim mappers via AI assistants",
   "type": "module",
   "bin": {
     "kotauth-mcp": "dist/index.js"

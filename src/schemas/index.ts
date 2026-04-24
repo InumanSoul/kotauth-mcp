@@ -105,3 +105,35 @@ export const QueryAuditLogsSchema = z.object({
   limit: z.number().int().min(1).max(200).default(50).describe("Number of events to return (max 200)"),
   offset: z.number().int().min(0).default(0).describe("Pagination offset"),
 });
+
+// --- User Attributes ---
+
+export const ListUserAttributesSchema = z.object({
+  userId: z.number().int().positive().describe("User ID"),
+});
+
+export const SetUserAttributeSchema = z.object({
+  userId: z.number().int().positive().describe("User ID"),
+  key: z.string().min(1).max(64).describe("Attribute key (max 64 chars)"),
+  value: z.string().max(1024).describe("Attribute value (max 1024 chars)"),
+});
+
+export const DeleteUserAttributeSchema = z.object({
+  userId: z.number().int().positive().describe("User ID"),
+  key: z.string().min(1).describe("Attribute key to delete"),
+});
+
+// --- Claim Mappers ---
+
+export const ListClaimMappersSchema = z.object({});
+
+export const SetClaimMapperSchema = z.object({
+  attributeKey: z.string().min(1).max(64).describe("User attribute key to map"),
+  claimName: z.string().min(1).max(128).describe("JWT claim name to project into"),
+  includeInAccess: z.boolean().default(true).describe("Include in access tokens (default: true)"),
+  includeInId: z.boolean().default(false).describe("Include in ID tokens (default: false)"),
+});
+
+export const DeleteClaimMapperSchema = z.object({
+  attributeKey: z.string().min(1).describe("Attribute key of the mapper to delete"),
+});

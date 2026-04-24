@@ -1,6 +1,6 @@
 # @kotauth/mcp
 
-MCP (Model Context Protocol) server for [KotAuth](https://kotauth.dev) — manage users, roles, groups, sessions, and audit logs from AI assistants like Claude, Cursor, and any MCP-compatible client.
+MCP (Model Context Protocol) server for [KotAuth](https://kotauth.dev) — manage users, roles, groups, applications, sessions, audit logs, user attributes, and claim mappers from AI assistants like Claude, Cursor, and any MCP-compatible client. 25 tools across 8 domains.
 
 ## Quick Start
 
@@ -82,6 +82,16 @@ claude mcp add kotauth -- npx -y @kotauth/mcp \
 ### Audit
 - **query_audit_logs** — Query immutable audit events with filters
 
+### User Attributes
+- **list_user_attributes** — List all custom attributes for a user
+- **set_user_attribute** — Set a key-value attribute on a user (creates or updates)
+- **delete_user_attribute** — Remove an attribute from a user
+
+### Claim Mappers
+- **list_claim_mappers** — List all claim mappers for the workspace
+- **set_claim_mapper** — Map a user attribute to a JWT claim name
+- **delete_claim_mapper** — Remove a claim mapper
+
 ## Required API Key Scopes
 
 Each tool requires specific scopes on the API key:
@@ -99,6 +109,10 @@ Each tool requires specific scopes on the API key:
 | list_sessions | `sessions:read` |
 | revoke_session | `sessions:write` |
 | query_audit_logs | `audit_logs:read` |
+| list_user_attributes | `user_attributes:read` |
+| set_user_attribute, delete_user_attribute | `user_attributes:write` |
+| list_claim_mappers | `claim_mappers:read` |
+| set_claim_mapper, delete_claim_mapper | `claim_mappers:write` |
 
 ## Development
 
